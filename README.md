@@ -1,7 +1,7 @@
-# Passport-dribbble
+# Passport-Dribbble
 
 [Passport](https://github.com/jaredhanson/passport) strategy for authenticating
-with [dribbble](http://dribbble.com/) using the OAuth 2.0 API.
+with [Dribbble](http://dribbble.com/) using the OAuth 2.0 API.
 
 This module lets you authenticate using dribbble in your Node.js applications.
 By plugging into Passport, dribbble authentication can be easily and
@@ -59,10 +59,10 @@ application:
 
 ## Credits
 
-  - [Seba Belmar](http://github.com/sebabelmar)
+  [Seba Belmar](http://github.com/sebabelmar)
 
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2015 Seba Belmar <[http://sebabelmar.com/](http://sebabelmar.com/)>
+Copyright (c) 2015 [Seba Belmar](http://sebabelmar.com/)
