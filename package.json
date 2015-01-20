@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "vows": "0.6.x"
-    },
+  },
   "scripts": {
     "test": "NODE_PATH=lib node_modules/.bin/vows test/*-test.js"
   },
@@ -23,5 +23,9 @@
     "auth"
   ],
   "author": "Sebastian Belmar",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebabelmar/passport-dribbble/issues"
+  },
+  "homepage": "https://github.com/sebabelmar/passport-dribbble"
 }
