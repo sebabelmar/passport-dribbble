@@ -56,6 +56,55 @@ application:
 
     $ npm install --dev
     $ make test
+    
+## MEAN.js Strategy
+
+```
+/**
+ * Module dependencies.
+ */
+var passport = require('passport'),
+  url = require('url'),
+  dribbbleStrategy = require('passport-dribbble').Strategy,
+  config = require('../config'),
+  users = require('../../app/controllers/users');
+
+module.exports = function() {
+  // Use linkedin strategy
+  passport.use(new dribbbleStrategy({
+      clientID: config.dribbble.clientID,
+      clientSecret: config.dribbble.clientSecret,
+      callbackURL: config.dribbble.callbackURL,
+      passReqToCallback: true
+    },
+    function(req, accessToken, refreshToken, profile, done) {
+      // Set the provider data and include tokens
+      console.log(accessToken)
+      console.log(refreshToken)
+      console.log(profile)
+
+      var providerData = profile._json;
+      providerData.accessToken = accessToken;
+      providerData.refreshToken = refreshToken;
+
+      // Create the user OAuth profile
+      var providerUserProfile = {
+        firstName: profile.name.firstName,
+        lastName: profile.name.lastName,
+        displayName: profile.displayName,
+        // email: profile.emails[0].value,
+        username: profile.username,
+        provider: 'dribbble',
+        providerIdentifierField: 'id',
+        providerData: providerData
+      }
+
+    // Save the user OAuth profile
+    users.saveOAuthUserProfile(req, providerUserProfile, done);
+    }
+  ));
+};
+```
 
 ## Credits
 
